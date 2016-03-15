@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CECS_475___Lab_Assignment_5
 {
@@ -10,7 +11,7 @@ namespace CECS_475___Lab_Assignment_5
     {
         static void Main(string[] args)
         {
-            
+            /*
             BusinessLayer bs = new BusinessLayer();
             Standard temp = new Standard();
             temp.StandardId = 7;
@@ -34,6 +35,11 @@ namespace CECS_475___Lab_Assignment_5
             Standard std = bs.GetStandardByID(5);
             Console.WriteLine(std.StandardName);
              * */
+            
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            //Application.Run(new MainMenu());
+            
             
         }
     }
