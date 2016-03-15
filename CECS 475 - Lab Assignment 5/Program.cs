@@ -13,15 +13,13 @@ namespace CECS_475___Lab_Assignment_5
         {
             /*
             BusinessLayer bs = new BusinessLayer();
-            Standard temp = new Standard();
-            temp.StandardId = 7;
-            temp.StandardName = "My Standard";
+            Standard temp = bs.GetStandardByID(3);
 
             //bs.updateStandard(temp);
 
-            bs.addStandard(temp);
+            //bs.addStandard(temp);
 
-            //bs.removeStandard(temp);
+            bs.removeStandard(temp);
 
 
             
@@ -39,7 +37,6 @@ namespace CECS_475___Lab_Assignment_5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
-            
             
         }
     }
