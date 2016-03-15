@@ -21,7 +21,7 @@ namespace CECS_475___Lab_Assignment_5
             DbSet = datacontext.Set<T>();
             context = datacontext;
         }
-
+        
         public void Insert(T entity)
         {
             DbSet.Add(entity);
@@ -38,17 +38,17 @@ namespace CECS_475___Lab_Assignment_5
         {
             context.Entry(entity).State = EntityState.Modified;
         }
-
+        
         public T GetById(int id)
         {
             return DbSet.Find(id);
         }
-
+        
         public IQueryable<T> SearchFor(Expression<Func<T, bool>> predicate)
         {
             return DbSet.Where(predicate);
         }
-
+        
         public IEnumerable<T> GetAll()
         {
             return DbSet;

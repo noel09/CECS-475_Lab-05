@@ -13,12 +13,11 @@ namespace CECS_475___Lab_Assignment_5
         void addStandard(Standard standardObj);
         void updateStandard(Standard standardObj);
         void removeStandard(Standard standardObj);
-        /*
-        IList<Student> getAllStudents();
+        IEnumerable<Student> getAllStudents();
         Student GetStudentByID(int id);
         void addStudent(Student studentObj);
         void UpdateStudent(Student studentObj);
-        void RemoveStudent(Student studentObj);*/
+        void RemoveStudent(Student studentObj);
     }
     public class BusinessLayer : IBusinessLayer
     {
@@ -60,6 +59,31 @@ namespace CECS_475___Lab_Assignment_5
         public Standard GetStandardByID(int id)
         {
             return _standardRepository.GetById(id);
+        }
+
+        public IEnumerable<Student> getAllStudents()
+        {
+           return _studentRepository.GetAll();
+        }
+
+        public Student GetStudentByID(int id)
+        {
+           return _studentRepository.GetById(id);
+        }
+
+        public void addStudent(Student studentObj)
+        {
+           _studentRepository.Insert(studentObj);
+        }
+
+        public void UpdateStudent(Student studentObj)
+        {
+           _studentRepository.Update(studentObj);
+        }
+
+        public void RemoveStudent(Student studentObj)
+        {
+           _studentRepository.Delete(studentObj);
         }
 
     }
