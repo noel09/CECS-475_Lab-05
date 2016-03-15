@@ -5,8 +5,8 @@
         MaxHeight="206" MaxWidth="400"
         MinHeight="206" MinWidth="400">
     <Grid Background="#ffffff">
-        <Button Content="Standard Table" Margin="50,24,50,95" Click="StandardBtn_Click" BorderThickness="2"/>
-        <Button Content="Student Table" Margin="50,93,50,24" BorderThickness="2"/>
+        <Button Content="Standard Table" Margin="50,24,50,95" Click="StandardBtn_Click"/>
+        <Button Content="Student Table" Margin="50,93,50,24" />
 
     </Grid>
     <Window.Resources>

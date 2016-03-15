@@ -103,6 +103,12 @@
   <ItemGroup>
     <Folder Include="Images\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CECS 475 - Lab Assignment 5\CECS 475 - Lab Assignment 5.csproj">
+      <Project>{a779e18c-5bfe-4e64-889b-5b862aa29e5f}</Project>
+      <Name>CECS 475 - Lab Assignment 5</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

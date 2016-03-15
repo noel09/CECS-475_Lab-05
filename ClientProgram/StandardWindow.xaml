@@ -1,18 +1,24 @@
-﻿<Window x:Class="ClientProgram.StandardWindow"
+﻿<Window x:Name="load" x:Class="ClientProgram.StandardWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="StandardWindow" Height="500" Width="640">
+        Title="StandardWindow" Height="500" Width="640" Loaded="load_Loaded">
     <Grid Background="#c5eff7">
         <ScrollViewer HorizontalAlignment="Left" Height="335" Margin="10,126,0,0" VerticalAlignment="Top" Width="613">
-            <TextBlock Background="White" TextWrapping="Wrap"/>
+            <TextBlock x:Name="outputTextBlock" Background="White" TextWrapping="Wrap"/>
         </ScrollViewer>
-        <Button Background="Transparent" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="125" Height="105" BorderThickness="0">
-            <StackPanel>
-                <Image Source="/Images/SearchIcon.png"/>
-            </StackPanel>
-        </Button>
-        <Button Content=" Add"  HorizontalAlignment="Left" Margin="498,10,0,0" VerticalAlignment="Top" Width="125" Height="105"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="175,10,0,0" VerticalAlignment="Top" Width="125" Height="105"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="339,10,0,0" VerticalAlignment="Top" Width="125" Height="105"/>
+        <Button Background="#f22613" Foreground="White" Content= "ADD NEW RECORD" Margin="10,10,0,0" Click="AddButton_Click"/>
+        <Button Background="#19b5fe" Foreground="White" Content= "SEARCH" Margin="498,10,0,0"/>
+        <Button Background ="#1bbc9b" Foreground="White" Content="UPDATE RECORD" Margin="175,10,0,0"/>
+        <Button Background="#e87e04" Foreground="White" Content="DELETE RECORD" Margin="339,10,0,0"/>
     </Grid>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="BorderBrush" Value="#4b77be"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Height" Value="105"/>
+            <Setter Property="Width" Value="125"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+    </Window.Resources>
 </Window>

@@ -38,7 +38,7 @@ namespace CECS_475___Lab_Assignment_5
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new MainMenu());
+            Application.Run(new MainMenu());
             
             
         }
