@@ -11,15 +11,17 @@ namespace CECS_475___Lab_Assignment_5
     {
         static void Main(string[] args)
         {
-            /*
+            
             BusinessLayer bs = new BusinessLayer();
-            Standard temp = bs.GetStandardByID(3);
+            Standard temp = new Standard();
+            temp.StandardId = 2;
+            temp.StandardName = "Updated Standard";
 
-            //bs.updateStandard(temp);
+            bs.updateStandard(temp);
 
             //bs.addStandard(temp);
 
-            bs.removeStandard(temp);
+            //bs.removeStandard(temp);
 
 
             
@@ -33,11 +35,11 @@ namespace CECS_475___Lab_Assignment_5
             Standard std = bs.GetStandardByID(5);
             Console.WriteLine(std.StandardName);
              * */
-            
+            /*
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainMenu());
-            
+            */
         }
     }
 }
