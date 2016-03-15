@@ -20,5 +20,7 @@ namespace CECS_475___Lab_Assignment_5
         IQueryable<T> SearchFor(Expression<Func<T, bool>> predicate);
 
         IEnumerable<T> GetAll();
+
+        T GetSingle(Func<T, bool> where, params Expression<Func<T, object>>[] navigationProperties);
     }
 }
