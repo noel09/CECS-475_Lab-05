@@ -7,7 +7,9 @@
             <TextBlock x:Name="outputTextBlock" Background="White" TextWrapping="Wrap"/>
         </ScrollViewer>
         <Button Background="#f22613" Foreground="White" Content= "ADD NEW RECORD" Margin="10,10,0,0" Click="AddButton_Click"/>
-        <Button Background="#19b5fe" Foreground="White" Content= "SEARCH" Margin="498,10,0,0"/>
+        <Button Background ="Transparent" Margin="498,10,0,0" BorderThickness ="0">
+            <Image Source="/Images/SearchIcon.png"/>
+        </Button>
         <Button Background ="#1bbc9b" Foreground="White" Content="UPDATE RECORD" Margin="175,10,0,0"/>
         <Button Background="#e87e04" Foreground="White" Content="DELETE RECORD" Margin="339,10,0,0"/>
     </Grid>
