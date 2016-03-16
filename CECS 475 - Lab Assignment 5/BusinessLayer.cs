@@ -18,6 +18,9 @@ namespace CECS_475___Lab_Assignment_5
         void addStudent(Student studentObj);
         void UpdateStudent(Student studentObj);
         void RemoveStudent(Student studentObj);
+        Standard GetStandardByName(string name);
+        Student GetStudentByName(string name);
+        Student GetStudentByStandardID(int id);
     }
     public class BusinessLayer : IBusinessLayer
     {
@@ -86,5 +89,19 @@ namespace CECS_475___Lab_Assignment_5
            _studentRepository.Delete(studentObj);
         }
 
+        public Standard GetStandardByName(String name)
+        {
+           return _standardRepository.GetSingle(d => d.StandardName.Equals(name), d => d.Students);
+        }
+
+        public Student GetStudentByName(String name)
+        {
+           return _studentRepository.GetSingle(d => d.StudentName.Equals(name), d => d.Standard);
+        }
+
+        public Student GetStudentByStandardID(int id)
+        {
+           return _studentRepository.SearchFor(d => d.StandardId.Equals(id)).SingleOrDefault();
+        }
     }
 }
