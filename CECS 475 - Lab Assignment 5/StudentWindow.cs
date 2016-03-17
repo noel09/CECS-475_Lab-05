@@ -38,6 +38,21 @@ namespace CECS_475___Lab_Assignment_5
             }
         }
 
+        private void radioBtnAdd_Click(object sender, EventArgs e)
+        {
+            txtId.Enabled = false;
+            txtName.Enabled = true;
+            comboBoxStandard.Enabled = true;
+            btnClear.Enabled = true;
+            btnSubmit.Enabled = true;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        /*
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddRecord addWindow = new AddRecord(bLayer, "Student");
@@ -66,5 +81,6 @@ namespace CECS_475___Lab_Assignment_5
             SearchWindow srchWindow = new SearchWindow(bLayer, "Student");
             srchWindow.Show();
         }
+         * */
     }
 }
