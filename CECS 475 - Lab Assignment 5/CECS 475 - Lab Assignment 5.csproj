@@ -70,21 +70,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddRecord.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddRecord.Designer.cs">
-      <DependentUpon>AddRecord.cs</DependentUpon>
-    </Compile>
     <Compile Include="BusinessLayer.cs" />
     <Compile Include="Course.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DeleteWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DeleteWindow.Designer.cs">
-      <DependentUpon>DeleteWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="GetCoursesByStudentId_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -115,12 +103,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
-    <Compile Include="SearchWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchWindow.Designer.cs">
-      <DependentUpon>SearchWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Standard.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -144,12 +126,6 @@
     </Compile>
     <Compile Include="Teacher.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UpdateWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UpdateWindow.Designer.cs">
-      <DependentUpon>UpdateWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="View_StudentCourse.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -206,26 +182,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AddRecord.resx">
-      <DependentUpon>AddRecord.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DeleteWindow.resx">
-      <DependentUpon>DeleteWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SearchWindow.resx">
-      <DependentUpon>SearchWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StandardWindow.resx">
       <DependentUpon>StandardWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentWindow.resx">
       <DependentUpon>StudentWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UpdateWindow.resx">
-      <DependentUpon>UpdateWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
