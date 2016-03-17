@@ -65,6 +65,7 @@
             this.btnSubmit.TabStop = false;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // outputTextBox
             // 
@@ -116,6 +117,7 @@
             this.btnClear.TabStop = false;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // groupBoxMenu
             // 

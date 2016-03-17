@@ -60,9 +60,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(300, 97);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 20);
+            this.label3.Size = new System.Drawing.Size(100, 20);
             this.label3.TabIndex = 32;
-            this.label3.Text = "Standard:";
+            this.label3.Text = "Standard ID:";
             // 
             // label2
             // 
@@ -92,6 +92,7 @@
             this.radioBtnSearchByName.TabStop = true;
             this.radioBtnSearchByName.Text = "Search By Name";
             this.radioBtnSearchByName.UseVisualStyleBackColor = true;
+            this.radioBtnSearchByName.Click += new System.EventHandler(this.radioBtnSearchByName_Click);
             // 
             // txtName
             // 
@@ -111,6 +112,7 @@
             this.radioBtnSearchById.TabStop = true;
             this.radioBtnSearchById.Text = "Search By ID";
             this.radioBtnSearchById.UseVisualStyleBackColor = true;
+            this.radioBtnSearchById.Click += new System.EventHandler(this.radioBtnSearchById_Click);
             // 
             // radioBtnUpdate
             // 
@@ -122,6 +124,7 @@
             this.radioBtnUpdate.TabStop = true;
             this.radioBtnUpdate.Text = "Update";
             this.radioBtnUpdate.UseVisualStyleBackColor = true;
+            this.radioBtnUpdate.Click += new System.EventHandler(this.radioBtnUpdate_Click);
             // 
             // radioBtnAdd
             // 
@@ -158,6 +161,7 @@
             this.radioBtnDelete.TabStop = true;
             this.radioBtnDelete.Text = "Delete";
             this.radioBtnDelete.UseVisualStyleBackColor = true;
+            this.radioBtnDelete.Click += new System.EventHandler(this.radioBtnDelete_Click);
             // 
             // btnClear
             // 
@@ -176,6 +180,7 @@
             this.btnClear.TabStop = false;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnRefresh
             // 
@@ -227,6 +232,7 @@
             this.btnSubmit.TabStop = false;
             this.btnSubmit.Text = "SUBMIT";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // comboBoxStandard
             // 
