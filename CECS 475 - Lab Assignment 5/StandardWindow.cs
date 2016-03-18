@@ -97,7 +97,7 @@ namespace CECS_475___Lab_Assignment_5
             txtDescription.Enabled = false;
             btnClear.Enabled = true;
             btnSubmit.Enabled = true;
-            selectedOperation = "searchId";
+            selectedOperation = "searchById";
             clearAllFields();
         }
 
@@ -108,7 +108,7 @@ namespace CECS_475___Lab_Assignment_5
             txtDescription.Enabled = false;
             btnClear.Enabled = true;
             btnSubmit.Enabled = true;
-            selectedOperation = "searchName";
+            selectedOperation = "searchByName";
             clearAllFields();
         }
 
