@@ -101,7 +101,7 @@ namespace CECS_475___Lab_Assignment_5
 
         public IEnumerable<Student> GetStudentByStandardID(int id)
         {
-            return _studentRepository.SearchFor(d => d.StandardId == id);
+           return _studentRepository.SearchFor(d => d.StandardId == id);
         }
     }
 }
