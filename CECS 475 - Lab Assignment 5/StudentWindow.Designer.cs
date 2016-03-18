@@ -30,8 +30,8 @@
         {
             this.txtId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblIdOrName = new System.Windows.Forms.Label();
             this.radioBtnSearchByName = new System.Windows.Forms.RadioButton();
             this.txtName = new System.Windows.Forms.TextBox();
             this.radioBtnSearchById = new System.Windows.Forms.RadioButton();
@@ -64,23 +64,23 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Standard ID:";
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 61);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 20);
-            this.label2.TabIndex = 31;
-            this.label2.Text = "Name:";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(300, 61);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(55, 20);
+            this.lblName.TabIndex = 31;
+            this.lblName.Text = "Name:";
             // 
-            // label1
+            // lblIdOrName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 20);
-            this.label1.TabIndex = 30;
-            this.label1.Text = "ID:";
+            this.lblIdOrName.AutoSize = true;
+            this.lblIdOrName.Location = new System.Drawing.Point(300, 25);
+            this.lblIdOrName.Name = "lblIdOrName";
+            this.lblIdOrName.Size = new System.Drawing.Size(30, 20);
+            this.lblIdOrName.TabIndex = 30;
+            this.lblIdOrName.Text = "ID:";
             // 
             // radioBtnSearchByName
             // 
@@ -252,8 +252,8 @@
             this.Controls.Add(this.comboBoxStandard);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.lblIdOrName);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnClear);
@@ -275,8 +275,8 @@
 
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Label lblIdOrName;
         private System.Windows.Forms.RadioButton radioBtnSearchByName;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.RadioButton radioBtnSearchById;

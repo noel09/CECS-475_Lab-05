@@ -53,10 +53,12 @@ namespace CECS_475___Lab_Assignment_5
             btnClear.Enabled = true;
             btnSubmit.Enabled = true;
             selectedOperation = "add";
+            clearAllFields();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
+            clearAllFields();
             LoadData();
         }
 
@@ -68,6 +70,7 @@ namespace CECS_475___Lab_Assignment_5
             btnClear.Enabled = true;
             btnSubmit.Enabled = true;
             selectedOperation = "update";
+            clearAllFields();
         }
 
         private void radioBtnDelete_Click(object sender, EventArgs e)
@@ -78,6 +81,7 @@ namespace CECS_475___Lab_Assignment_5
             btnSubmit.Enabled = true;
             btnClear.Enabled = true;
             selectedOperation = "delete";
+            clearAllFields();
         }
 
         private void radioBtnSearchById_Click(object sender, EventArgs e)
@@ -88,6 +92,7 @@ namespace CECS_475___Lab_Assignment_5
             btnSubmit.Enabled = true;
             btnClear.Enabled = true;
             selectedOperation = "searchById";
+            clearAllFields();
         }
 
         private void radioBtnSearchByName_Click(object sender, EventArgs e)
@@ -98,91 +103,68 @@ namespace CECS_475___Lab_Assignment_5
             btnSubmit.Enabled = true;
             btnClear.Enabled = true;
             selectedOperation = "searchByName";
+            clearAllFields();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            txtId.Clear();
-            txtName.Clear();
+            clearAllFields();
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (selectedOperation == "add")
-            {
-                Student stu = new Student();
-                int stdId = Int32.Parse(comboBoxStandard.Text);
-                stu.StudentName = txtName.Text;
-                stu.StandardId = stdId;
-                bLayer.addStudent(stu);
-                LoadData();
+            int stdId, stuId;
+            Student stu;
+            switch (selectedOperation) { 
+                case "add":
+                    stu = new Student();
+                    stdId = Int32.Parse(comboBoxStandard.Text);
+                    stu.StudentName = txtName.Text;
+                    stu.StandardId = stdId;
+                    bLayer.addStudent(stu);
+                    LoadData();
+                    break;
+                case "update":
+                    stuId = Int32.Parse(txtId.Text);
+                    stdId = Int32.Parse(comboBoxStandard.Text);
+                    stu = bLayer.GetStudentByID(stuId);
+                    stu.StudentName = txtName.Text;
+                    stu.StandardId = stdId;
+                    bLayer.UpdateStudent(stu);
+                    LoadData();
+                    break;
+                case "delete":
+                    stuId = Int32.Parse(txtId.Text);
+                    stu = bLayer.GetStudentByID(stuId);
+                    bLayer.RemoveStudent(stu);
+                    LoadData();
+                    break;
+                case "searchById":
+                    stuId = Int32.Parse(txtId.Text);
+                    stu = bLayer.GetStudentByID(stuId);
+                    outputTextBox.Clear();
+                    outputTextBox.AppendText("Student ID: " + stu.StudentID +
+                                             "\r\nStudent Name: " + stu.StudentName +
+                                             "\r\nStandard ID: " + stu.StandardId);
+                    break;
+                case "searchByName":
+                    stu = bLayer.GetStudentByName(txtName.Text);
+                    outputTextBox.Clear();
+                    outputTextBox.AppendText("Student ID: " + stu.StudentID +
+                                             "\r\nStudent Name: " + stu.StudentName +
+                                             "\r\nStandard ID: " + stu.StandardId);
+                    break;
+                default:
+                    break;
             }
-            else if (selectedOperation == "update")
-            {
-                Student stu = new Student();
-                int stuId = Int32.Parse(txtId.Text);
-                int stdId = Int32.Parse(comboBoxStandard.Text);
-                stu.StudentID = stuId;
-                stu.StudentName = txtName.Text;
-                stu.StandardId = stdId;
-                bLayer.UpdateStudent(stu);
-                LoadData();
-            }
-            else if (selectedOperation == "delete")
-            {
-                int stuId = Int32.Parse(txtId.Text);
-                Student stu = bLayer.GetStudentByID(stuId);
-                bLayer.RemoveStudent(stu);
-                LoadData();
-            }
-            else if (selectedOperation == "searchById")
-            {
-                int stuId = Int32.Parse(txtId.Text);
-                Student stu = bLayer.GetStudentByID(stuId);
-                outputTextBox.Clear();
-                outputTextBox.AppendText("Student ID: " + stu.StudentID +
-                                         "\r\nStudent Name: " + stu.StudentName +
-                                         "\r\nStandard ID: " + stu.StandardId);
-            }
-            else if (selectedOperation == "searchByName")
-            {
-                Student stu = bLayer.GetStudentByName(txtName.Text);
-                outputTextBox.Clear();
-                outputTextBox.AppendText("Student ID: " + stu.StudentID +
-                                         "\r\nStudent Name: " + stu.StudentName +
-                                         "\r\nStandard ID: " + stu.StandardId);
-            }
+            clearAllFields();
         }
 
-        /*
-        private void btnAdd_Click(object sender, EventArgs e)
+        public void clearAllFields()
         {
-            AddRecord addWindow = new AddRecord(bLayer, "Student");
-            addWindow.Show();
+            txtId.Clear();
+            txtName.Clear();
+            comboBoxStandard.Text = "";
         }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            UpdateWindow updtWindow = new UpdateWindow(bLayer, "Student");
-            updtWindow.Show();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            DeleteWindow delWindow = new DeleteWindow(bLayer, "Student");
-            delWindow.Show();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            SearchWindow srchWindow = new SearchWindow(bLayer, "Student");
-            srchWindow.Show();
-        }
-         * */
     }
 }
