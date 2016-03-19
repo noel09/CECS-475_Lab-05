@@ -1,4 +1,12 @@
-﻿using System;
+﻿/**************************************
+ * 
+ * George Rhee and Imanuel Kurniawan
+ * CECS 475 - Lab Assignment #5
+ * BusinessLayer.cs
+ * 
+ * ************************************/
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,102 +14,118 @@ using System.Threading.Tasks;
 
 namespace CECS_475___Lab_Assignment_5
 {
-    public interface IBusinessLayer
-    {
-        IEnumerable<Standard> getAllStandards();
-        Standard GetStandardByID(int id);
-        void addStandard(Standard standardObj);
-        void updateStandard(Standard standardObj);
-        void removeStandard(Standard standardObj);
-        IEnumerable<Student> getAllStudents();
-        Student GetStudentByID(int id);
-        void addStudent(Student studentObj);
-        void UpdateStudent(Student studentObj);
-        void RemoveStudent(Student studentObj);
-        Standard GetStandardByName(string name);
-        Student GetStudentByName(string name);
-        IEnumerable<Student> GetStudentByStandardID(int id);
-    }
-    public class BusinessLayer : IBusinessLayer
-    {
-        private readonly IStandardRepository _standardRepository;
-        private readonly IStudentRepository _studentRepository;
-        public BusinessLayer()
-        {
-            _standardRepository = new StandardRepository();
-            _studentRepository = new StudentRepository();
-        }
+   public interface IBusinessLayer
+   {
+      IEnumerable<Standard> getAllStandards();
+      Standard GetStandardByID(int id);
+      void addStandard(Standard standardObj);
+      void updateStandard(Standard standardObj);
+      void removeStandard(Standard standardObj);
+      IEnumerable<Student> getAllStudents();
+      Student GetStudentByID(int id);
+      void addStudent(Student studentObj);
+      void UpdateStudent(Student studentObj);
+      void RemoveStudent(Student studentObj);
+      Standard GetStandardByName(string name);
+      Student GetStudentByName(string name);
+      IEnumerable<Student> GetStudentByStandardID(int id);
+   }//end interface IBusinessLayer
 
-        public void addStandard(Standard standardObj)
-        {
-            _standardRepository.Insert(standardObj);
-        }
+   public class BusinessLayer : IBusinessLayer
+   {
+      private readonly IStandardRepository _standardRepository;
+      private readonly IStudentRepository _studentRepository;
 
-        public void removeStandard(Standard standardObj)
-        {
-           try
-           {
-                _standardRepository.Delete(standardObj);
-           }
-           catch (InvalidOperationException e)
-           {
-               Console.WriteLine(standardObj.StandardName + " is not in the database.");
-           }
-        }
+      //Constructor
+      public BusinessLayer()
+      {
+         _standardRepository = new StandardRepository();
+         _studentRepository = new StudentRepository();
+      }//constructor
 
-        public void updateStandard(Standard standardObj)
-        {
-            _standardRepository.Update(standardObj);
-        }
+      //Add new Standard into repository
+      public void addStandard(Standard standardObj)
+      {
+         _standardRepository.Insert(standardObj);
+      }//end addStandard
 
-        public IEnumerable<Standard> getAllStandards()
-        {
-            return _standardRepository.GetAll();
-        }
+      //Delete existing Standard from repository
+      public void removeStandard(Standard standardObj)
+      {
+         try
+         {
+            _standardRepository.Delete(standardObj);
+         }
+         catch (InvalidOperationException e)
+         {
+            Console.WriteLine(standardObj.StandardName + " is not in the database.");
+         }
+      }//end removeStandard
 
-        public Standard GetStandardByID(int id)
-        {
-            return _standardRepository.GetById(id);
-        }
+      //Change existing Standard in repository
+      public void updateStandard(Standard standardObj)
+      {
+         _standardRepository.Update(standardObj);
+      }//end updateStandard
 
-        public IEnumerable<Student> getAllStudents()
-        {
-           return _studentRepository.GetAll();
-        }
+      //Get all Standards in repository
+      public IEnumerable<Standard> getAllStandards()
+      {
+         return _standardRepository.GetAll();
+      }//end getAllStandards
 
-        public Student GetStudentByID(int id)
-        {
-           return _studentRepository.GetById(id);
-        }
+      //Get Standard with integer
+      public Standard GetStandardByID(int id)
+      {
+         return _standardRepository.GetById(id);
+      }//end GetStandardByID
 
-        public void addStudent(Student studentObj)
-        {
-           _studentRepository.Insert(studentObj);
-        }
+      //Get all Students in repository
+      public IEnumerable<Student> getAllStudents()
+      {
+         return _studentRepository.GetAll();
+      }//end getAllStudents
 
-        public void UpdateStudent(Student studentObj)
-        {
-           _studentRepository.Update(studentObj);
-        }
+      //Get Student with integer
+      public Student GetStudentByID(int id)
+      {
+         return _studentRepository.GetById(id);
+      }//end GetStudentByID
 
-        public void RemoveStudent(Student studentObj)
-        {
-           _studentRepository.Delete(studentObj);
-        }
+      //Add new Student into repository
+      public void addStudent(Student studentObj)
+      {
+         _studentRepository.Insert(studentObj);
+      }//end addStudent
 
-        public Standard GetStandardByName(String name)
-        {
-           return _standardRepository.GetSingle(d => d.StandardName.Equals(name), d => d.Students);
-        }
+      //Change existing Student in repository
+      public void UpdateStudent(Student studentObj)
+      {
+         _studentRepository.Update(studentObj);
+      }//end UpdateStudent
 
-        public Student GetStudentByName(String name)
-        {
-           return _studentRepository.GetSingle(d => d.StudentName.Equals(name), d => d.Standard);
-        }
+      //Delete Student from repository
+      public void RemoveStudent(Student studentObj)
+      {
+         _studentRepository.Delete(studentObj);
+      }//end RemoveStudent
 
-        public IEnumerable<Student> GetStudentByStandardID(int id)
-        {
-           return _studentRepository.SearchFor(d => d.StandardId == id);
-        }
-    }
-}
+      //Get Standard from string
+      public Standard GetStandardByName(String name)
+      {
+         return _standardRepository.GetSingle(d => d.StandardName.Equals(name), d => d.Students);
+      }//end GetStandardByName
+
+      //Get Student from string
+      public Student GetStudentByName(String name)
+      {
+         return _studentRepository.GetSingle(d => d.StudentName.Equals(name), d => d.Standard);
+      }//end GetStudentByName
+
+      //Get all Students with StandardID
+      public IEnumerable<Student> GetStudentByStandardID(int id)
+      {
+         return _studentRepository.SearchFor(d => d.StandardId == id);
+      }//end GetStudentByStandardID
+   }//end class BusinessLayer
+}//end namespace CECS_475___Lab_Assignment_5

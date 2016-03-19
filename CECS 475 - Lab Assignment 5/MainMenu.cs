@@ -1,4 +1,12 @@
-﻿using System;
+﻿/**************************************
+ * 
+ * George Rhee and Imanuel Kurniawan
+ * CECS 475 - Lab Assignment #5
+ * MainMenu.cs
+ * 
+ * ************************************/
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,23 +18,26 @@ using System.Windows.Forms;
 
 namespace CECS_475___Lab_Assignment_5
 {
-    public partial class MainMenu : Form
-    {
-        public MainMenu()
-        {
-            InitializeComponent();
-        }
+   public partial class MainMenu : Form
+   {
+      //Constructor
+      public MainMenu()
+      {
+         InitializeComponent();
+      }//end constructor MainMenu
 
-        private void btnStandard_Click(object sender, EventArgs e)
-        {
-            StandardWindow stdWindow = new StandardWindow();
-            stdWindow.Show();
-        }
+      //Button for Standard menu
+      private void btnStandard_Click(object sender, EventArgs e)
+      {
+         StandardWindow stdWindow = new StandardWindow();
+         stdWindow.Show();
+      }//end method btnStandard_Click
 
-        private void btnStudent_Click(object sender, EventArgs e)
-        {
-            StudentWindow stuWindow = new StudentWindow();
-            stuWindow.Show();
-        }
-    }
-}
+      //Button for Student menu
+      private void btnStudent_Click(object sender, EventArgs e)
+      {
+         StudentWindow stuWindow = new StudentWindow();
+         stuWindow.Show();
+      }//end method btnStudent_Click
+   }//end class MainMenu
+}//end namespace CECS_475___Lab_Assignment_5
